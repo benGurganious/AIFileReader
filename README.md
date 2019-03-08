@@ -34,6 +34,9 @@ Example psuedocode:
       <2:1> same as <2:0> but set to variable[1]
       <(1)*10> means to read 10 items of size variable[1] bytes
       
+      A file of the above specification may look like (file is expected to be a binary file; ASCII files can be read with correct specification creation although likely unecessary to use this reader for such purpose):
+        0x00FF <0xff bytes here> 0x0F00 <10 items of 0x0F00 bytes or 0x0F00 items of 10 bytes>
+      
   Using the reader:
     MyObj obj = new MyObj()
     AbstractFileReader reader = new AbstractFileReader(interpret(specification),filename_to_read)
